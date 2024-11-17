@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Order</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.6), 
+                rgba(0, 0, 0, 0.6)
+            ), 
+            url('./pbo.jpg'); /* Replace with your pizza background */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: #FFC747;
+            color: #432015;
+            padding: 25px;
+            text-align: center;
+            width: 100%;
+        }
+
+        header h1 {
+            transition: color 0.5s ease, transform 0.5s ease;
+            cursor: pointer;
+        }
+
+        header h1:hover {
+            color: #D53A00;
+            background: linear-gradient(90deg, #FFC747, #FF6347, #D53A00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transform: scale(1.1) rotate(-2deg);
+        }
+
+        nav {
+            color: white;
+            background-color: #2A120B;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #FFC747;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 50px 0;
+            width: 100%;
+        }
+
+        .container a {
+            position: relative;
+            width: 30%;
+            margin: 10px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .container a:hover img {
+            transform: scale(1.1);
+            filter: brightness(50%);
+        }
+
+        .container a:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .pizza-name {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Arial', sans-serif;
+            font-size: 1.8rem;
+            color: #FFC747;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .container a:hover .pizza-name {
+            opacity: 1;
+        }
+
+        footer {
+    background-color: #2A120B;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-icon img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.footer-icon:hover img {
+    transform: scale(1.2); /* Slight zoom effect */
+    filter: brightness(1.5); /* Brighten the icon */
+}
+
+footer p {
+    font-size: 1rem;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #FFC747; /* Gold hover effect */
+}
+
+
+        /* Styles for the Next Page button */
+        .next-page-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #FFC747;
+            color: #432015;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .next-page-btn:hover {
+            background-color: #FF6347;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Pizza Place</h1>
+    </header>
+
+    <nav>
+        <a href="./index.html">Home</a>
+        <a href="https://www.instagram.com/jaysupekarr" target="_blank">Instagram</a>
+        <a href="https://www.instagram.com/jaysupekarr" target="_blank">Contact</a>
+    </nav>
+
+    <div class="container">
+        <a href="./order-margherita.html">
+            <img src="./pizza1.jpg" alt="Margherita Pizza">
+            <span class="pizza-name">Margherita Pizza</span>
+        </a>
+        
+        <a href="./order-pepperoni.html">
+            <img src="./pizza2.jpg" alt="Pepperoni Pizza">
+            <span class="pizza-name">Pepperoni Pizza</span>
+        </a>
+
+        <a href="./order-veggie.html">
+            <img src="./pizza3.jpg" alt="Veggie Pizza">
+            <span class="pizza-name">Veggie Deluxe</span>
+        </a>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            
+            <div class="footer-icons">
+                <a href="https://facebook.com" target="_blank" class="footer-icon">
+                    <img src="./facebook.png" alt="Facebook">
+                </a>
+                <a href="https://twitter.com" target="_blank" class="footer-icon">
+                    <img src="./x icon.png" alt="Twitter">
+                </a>
+                <a href="https://instagram.com" target="_blank" class="footer-icon">
+                    <img src="./instagram.png" alt="Instagram">
+                </a>
+            </div>
+        </div>
+    </footer>
+    
+
+    <!-- Next Page Button -->
+    <button class="next-page-btn" onclick="window.location.href='./next-page.html';">Next Page</button>
+
+</body>
+</html>
